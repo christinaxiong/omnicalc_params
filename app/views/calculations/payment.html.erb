@@ -1,0 +1,19 @@
+<h1>Payment Results</h1>
+
+<h4>APR</h4>
+<%=@apr %>%
+
+<h4>Number of years</h4>
+<%=@years%>
+
+<h4>Principal</h4>
+<%=number_to_currency(@principal)%>
+
+<h4>Payment</h4>
+<%=number_to_currency(@monthly_payment)%>
+
+<div class = "padding-inside-top-md">
+<a href="/square_root/new">
+ Calculate another payment
+</a>
+</div>
