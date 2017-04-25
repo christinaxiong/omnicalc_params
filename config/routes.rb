@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get("/payment/new",{:controller =>"calculations", :action => "payment_form"})
   get("/payment/results",{:controller =>"calculations", :action => "payment"})
-  get("/flexible/payment/:num/:number_of_years/:principal_value",{:controller =>"calculations", :action => "flex_payment_410_30_250000"})
+  get("/flexible/payment/:APR/:number_of_years/:principal_value",{:controller =>"calculations", :action => "flex_payment_410_30_250000"})
 
   get("/random/new",{:controller =>"calculations", :action => "random_form"})
   get("/random/results",{:controller =>"calculations", :action => "random"})

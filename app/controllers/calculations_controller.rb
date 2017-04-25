@@ -17,12 +17,12 @@ class CalculationsController <ApplicationController #defining a class called Cal
     render("calculations/flex_random_50_100.html.erb")
   end
   def payment
-    @apr = (params[:annual_percentage_rate].to_f)
+    @apr = params[:APR].to_f
     @years = params[:number_of_years].to_i
     @principal = params[:principal_value].to_f
 
     months= @years*12
-    numerator=@principal*(@apr/100/12)
+    numerator=@principal*@apr/100/12
     denominator=1-(1+(@apr/100/12))**(-months)
     @monthly_payment = numerator / denominator
     render("calculations/payment.html.erb")
@@ -34,11 +34,11 @@ class CalculationsController <ApplicationController #defining a class called Cal
     @principal = params[:principal_value].to_f
   end
   def flex_payment_410_30_250000
-    @apr = params["num"].to_f/100
+    @apr = params[:APR].to_f
     @years = params[:number_of_years].to_i
     @principal = params[:principal_value].to_f
     months= @years*12
-    numerator=@principal*(@apr/100/12)
+    numerator=@principal*@apr/100/12
     denominator=1-(1+(@apr/100/12))**(-months)
     @monthly_payment = numerator / denominator
     render("calculations/flex_payment_410_30_250000.html.erb")
