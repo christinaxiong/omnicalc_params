@@ -34,9 +34,10 @@ class CalculationsController <ApplicationController #defining a class called Cal
     @principal = params[:principal_value].to_f
   end
   def flex_payment_410_30_250000
-    @apr = params[:APR].to_f
+    @apr = params[:APR].to_f/100
     @years = params[:number_of_years].to_i
     @principal = params[:principal_value].to_f
+
     months= @years*12
     numerator=@principal*@apr/100/12
     denominator=1-(1+(@apr/100/12))**(-months)
