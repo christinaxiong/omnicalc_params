@@ -1,24 +1,19 @@
 class CalculationsController <ApplicationController #defining a class called CalculationsController and it's going to inherit goodies from Rails framework; render this, it knows to go in views template
   def random
-    @min=(params[:min_num].to_f)
-    @max=(params[:max_num].to_f)
-    @random=rand(@max-@min)+@min
+    @minimum=(params[:min].to_f)
+    @maximum=(params[:max].to_f)
+    @random=rand(@minimum..@maximum)
     render("calculations/random.html.erb")
-    def random_recalculate
-      @min= @min
-      @max= @max
-      render("calculations/random_recalculate.html.erb")
-    end
   end
   def random_form
     render("calculations/random_form.html.erb")
-    @min=(params[:min_num].to_f)
-    @max=(params[:max_num].to_f)
+    @minimum=(params[:min].to_f)
+    @maximum=(params[:max].to_f)
   end
   def flex_random_50_100
-    @min=(params[:min_num].to_f)
-    @max=(params[:max_num].to_f)
-    @random=rand(@max-@min)+@min
+    @minimum=(params[:min].to_f)
+    @maximum=(params[:max].to_f)
+    @random=rand(@minimum..@maximum)
     render("calculations/flex_random_50_100.html.erb")
   end
   def payment

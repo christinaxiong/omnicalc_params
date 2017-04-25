@@ -1,13 +1,13 @@
 <h1>Random Results </h1>
 <h4>Minimum</h4>
-<%=@min%>
+<%=@minimum%>
 <h4>Maximum</h4>
-<%=@max%>
+<%=@maximum%>
 <h4>Random Number</h4>
 <%=@random%>
 
 <div class = "padding-inside-top-md">
-<a href="/random/recalculate">
+<a href=/random/results?min=<%=@minimum%>&max=<%=@maximum%>>
 Recalculate
 </a>
 </div>
